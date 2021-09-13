@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //모든 HTML이 읽히고 나서 실행
+        window.onload = function(){
+            // button 이라는 Id 값을 가진 요소에 이벤트 처리기 삽입
+            document.getElementById("button").onclick = function(){
+                //키와 몸무게의 값을 받은 뒤 숫자값으로 파싱
+                var h = parseFloat(document.getElementById("height").value);
+                var w = parseFloat(document.getElementById("weight").value);
+                var bmi = document.getElementById("bmi");
+                console.log(h,w,bmi);
+                bmi.innerHTML = (w/h/h).toFixed(1);
+                //innerHTML을 통해 bmi 라는 요소의 자식을 모두 삭제하고 해당 값 삽입
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>키 : <input type="number" id="height"/> m</p>
+    <p>몸무게 : <input type="number" id="weight"/> kg</p>
+    <p>당신의 체질량 지수는 <output id="bmi">?</output> 입니다.</p>
+    <input type="button" id="button" value="계산"/>
+</body>
+</html>
